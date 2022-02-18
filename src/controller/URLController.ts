@@ -13,8 +13,9 @@ export class URLController {
 		}
 		const hash = shortId.generate()
 		const shortURL = `${config.API_URL}/${hash}`
-		const newURL = await URLModel.create({ hash, shortURL, originURL })
-		response.json(newURL)
+		const createAt = new Date().toISOString()
+		const newURL = await URLModel.create({ hash, shortURL, originURL, createAt })
+		response.status(201).json(newURL)
 	}
 
 	public async redirect(req: Request, response: Response): Promise<void> {
@@ -26,6 +27,6 @@ export class URLController {
 			return
 		}
 
-		response.status(400).json({ error: 'URL not found' })
+		response.status(404).json({ error: 'URL not found' })
 	}
 }
