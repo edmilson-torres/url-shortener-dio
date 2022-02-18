@@ -2,14 +2,14 @@
 require('dotenv').config()
 
 import express from 'express'
-import { MongoConnection } from './database/mongoConnection'
-import urlRoute from './routes/url.route'
 import helmet from 'helmet'
+import { MongoConnection } from './database/mongo.connection'
+import urlRoute from './routes/url.route'
 
 const api = express()
 
-api.use(helmet())
 api.use(express.json())
+api.use(helmet())
 
 const database = new MongoConnection()
 database.connect()
