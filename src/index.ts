@@ -1,15 +1,19 @@
+/* eslint-disable import/first */
+require('dotenv').config()
+
 import express from 'express'
-import { URLController } from './controller/URLController'
-import { MongoConnection } from './database/MongoConnection'
+import { MongoConnection } from './database/mongoConnection'
+import urlRoute from './routes/url.route'
+import helmet from 'helmet'
 
 const api = express()
+
+api.use(helmet())
 api.use(express.json())
 
 const database = new MongoConnection()
 database.connect()
 
-const urlController = new URLController()
-api.post('/shorten', urlController.shorten)
-api.get('/:hash', urlController.redirect)
+api.use(urlRoute)
 
-api.listen(5000, () => console.log('Express listening'))
+api.listen(process.env.PORT, () => console.log('Express listening, PORT: ' + process.env.PORT))
