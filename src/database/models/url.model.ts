@@ -1,4 +1,4 @@
-import { prop, Typegoose } from '@hasezoey/typegoose'
+import { prop, Typegoose } from '@typegoose/typegoose'
 
 export class URL extends Typegoose {
 @prop({ required: true })

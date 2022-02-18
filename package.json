@@ -17,7 +17,7 @@
   "author": "alexiadorneles",
   "license": "ISC",
   "dependencies": {
-    "@hasezoey/typegoose": "^5.9.2",
+    "@typegoose/typegoose": "^5.9.2",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.1",
