@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express'
 
 function isValidURL (string: string) {
-  const res = string.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g)
+  const res = string.match(/((?:([\w\d\.-]+)\:\/\/?){1}(?:(www)\.?){0,1}(((?:[\w\d-]+\.)*)([\w\d-]+\.[\w\d]+))){1}(?:\:(\d+)){0,1}((\/(?:(?:[^\/\s\?]+\/)*))(?:([^\?\/\s#]+?(?:.[^\?\s]+){0,1}){0,1}(?:\?([^\s#]+)){0,1})){0,1}(?:#([^#\s]+)){0,1}/gim)
   return (res !== null)
 };
 
@@ -9,9 +9,10 @@ const isValidURLMiddleware = (req: Request, resp: Response, next: NextFunction) 
   const { originURL } = req.body
 
   if (!isValidURL(originURL)) {
-    resp.status(400).json({ error: 'Invalid URL' })
+    resp.status(400).json({ error: 'Invalid URL' }).end()
+  } else {
+    next()
   }
-  next()
 }
 
 export default isValidURLMiddleware
