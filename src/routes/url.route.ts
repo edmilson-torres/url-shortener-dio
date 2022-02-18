@@ -6,7 +6,8 @@ const route = Router()
 
 const urlController = new URLController()
 
-route.post('/shorten', isValidURLMiddleware, urlController.shorten)
+route.get('/:hash/stats', urlController.stats)
 route.get('/:hash', urlController.redirect)
+route.post('/shorten', isValidURLMiddleware, urlController.shorten)
 
 export default route

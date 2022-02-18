@@ -12,6 +12,9 @@ export class URL extends Typegoose {
 
 @prop({ required: true })
   createAt: Date
+
+@prop({ required: true, default: '0' })
+  clicks: number
 }
 
 export const URLModel = new URL().getModelForClass(URL)
