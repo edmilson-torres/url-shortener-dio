@@ -4,7 +4,7 @@
   "description": "URL Shortener for DIO Project",
   "main": "index.js",
   "scripts": {
-    "eslint": "eslint src/**/*.ts'",
+    "eslint": "eslint src/**/*.ts",
     "eslint:fix": "eslint --fix src/**/*.ts",
     "prettier": "prettier src/**/*.ts",
     "prettier:fix": "prettier --write src/**/*.ts",
@@ -12,11 +12,12 @@
     "build": "tsc -p .",
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify src/index.ts",
     "start": "node ./dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "alexiadorneles",
   "license": "ISC",
   "dependencies": {
+    "@typegoose/typegoose": "^5.9.2",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.1",
@@ -26,20 +27,24 @@
     "nanoid": "^3.3.1"
   },
   "devDependencies": {
-    "@typegoose/typegoose": "^5.9.2",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.8",
+    "@types/jest": "^27.4.0",
     "@types/valid-url": "^1.0.3",
     "@typescript-eslint/eslint-plugin": "^5.12.0",
     "@typescript-eslint/parser": "^5.12.0",
-    "eslint": "^7.32.0",
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^5.2.0",
+    "jest": "^27.5.1",
     "prettier": "2.5.1",
+    "supertest": "^6.2.2",
+    "ts-jest": "^27.1.3",
     "ts-node-dev": "^1.1.8",
     "tsconfig-paths": "^3.12.0",
     "typescript": "^4.0.2"
