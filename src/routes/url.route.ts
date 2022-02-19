@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { URLController } from '../controller/url.controller';
+import URLController from '../controller/url.controller';
 import isValidURLMiddleware from '../middlewares/isvalid-url.middleware';
 import { rateLimiterRedirect, rateLimiterShorten, rateLimiterStats } from '../middlewares/rate-limit.middleware';
 
