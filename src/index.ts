@@ -1,5 +1,5 @@
 /* eslint-disable import/first */
-require('dotenv').config()
+import 'dotenv/config'
 
 import express from 'express'
 import helmet from 'helmet'
