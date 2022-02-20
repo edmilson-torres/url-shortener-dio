@@ -4,7 +4,8 @@
   "description": "URL Shortener for DIO Project",
   "main": "index.js",
   "engines": {
-    "node": "16.x"
+    "node": "16.x",
+    "npm": "8.x"
   },
   "scripts": {
     "eslint": "eslint src/**/*.ts",
