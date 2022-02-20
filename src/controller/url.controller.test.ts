@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import { nanoid } from 'nanoid';
 import { URLModel } from '../database/models/url.model';
 
-describe('URL shorten', () => {
+describe('url controller: shorten', () => {
   const randomHash = nanoid(10);
   const url = 'http://www.' + randomHash + '.com.br';
 
@@ -18,7 +18,7 @@ describe('URL shorten', () => {
     expect(res.body.originURL).toEqual(url);
   });
 
-  test('check if url exist', async () => {
+  test('url controller: check if exists', async () => {
     const res = await request(api).post('/shorten').send({
       originURL: url,
     });
@@ -28,7 +28,7 @@ describe('URL shorten', () => {
     expect(res.body.originURL).toEqual(url);
   });
 
-  test('url stats info', async () => {
+  test('url controller: stats', async () => {
     const res = await request(api).post('/shorten').send({
       originURL: url,
     });
@@ -39,7 +39,7 @@ describe('URL shorten', () => {
     expect(stats.body).toHaveProperty('clicks');
   });
 
-  test('check if stats info contains clicks 1', async () => {
+  test('url controller: check click count', async () => {
     const res = await request(api).post('/shorten').send({
       originURL: url,
     });
