@@ -2,7 +2,7 @@ import request from 'supertest';
 import api from '../app';
 import mongoose from 'mongoose';
 import { nanoid } from 'nanoid';
-import { URLModel } from '../database/models/url.model';
+import URLModel from '../database/models/url.model';
 
 describe('url controller: shorten', () => {
   const randomHash = nanoid(10);

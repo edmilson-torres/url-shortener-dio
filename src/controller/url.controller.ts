@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { nanoid } from 'nanoid';
 import config from '../config/constants';
-import { URLModel } from '../database/models/url.model';
+import URLModel from '../database/models/url.model';
 
 class URLController {
   public async shorten(req: Request, res: Response): Promise<void> {
