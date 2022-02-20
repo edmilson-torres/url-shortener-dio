@@ -1,0 +1,171 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "description": "Class project: 'Construindo Encurtador de URL'. Bootcamp Eduzz Fullstack Developer #3 - DIO",
+    "version": "1.0.0",
+    "title": "URL Shortener DIO",
+    "contact": {
+      "email": "edmilson.torres@gmail.com"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://github.com/edmilson-torres/url-shortener-dio/blob/main/LICENSE"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:5000",
+      "description": "API test"
+    }
+  ],
+  "host": "localhost:5000",
+  "basePath": "/",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "externalDocs": {
+    "description": "API Github repository",
+    "url": "https://github.com/edmilson-torres/url-shortener-dio"
+  },
+  "paths": {
+    "/shorten": {
+      "post": {
+        "summary": "Create a new short URL",
+        "description": "Creates a new shortened URL, if it exists, the information will be displayed.",
+        "tags": [
+          "URL"
+        ],
+        "requestBody": {
+          "required": true,
+          "description": "URL required",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "originURL": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "originURL": "http://www.dio.me"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "409": {
+            "description": "Too many requests"
+          },
+          "200": {
+            "description": "Shortened URL already exists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/URL"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Shortened URL created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/URL"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{hash}": {
+      "get": {
+        "summary": "Redirect to origin URL",
+        "description": "If there is a shortened URL with that hash, you will be redirected to the original URL, opening the page if it is valid.",
+        "tags": [
+          "URL"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "hash",
+            "description": "URL hash",
+            "required": true
+          }
+        ],
+        "responses": {
+          "409": {
+            "description": "Too many requests"
+          },
+          "404": {
+            "description": "URL not found"
+          },
+          "200": {
+            "description": "Redirected to origin URL"
+          }
+        }
+      }
+    },
+    "/{hash}/stats": {
+      "get": {
+        "summary": "View shortened URL information.",
+        "description": "If hash exists, view shortened URL information.",
+        "tags": [
+          "URL"
+        ],
+        "responses": {
+          "409": {
+            "description": "Too many requests"
+          },
+          "404": {
+            "description": "URL not found"
+          },
+          "200": {
+            "description": "Informations of url shorten.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/URL"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "URL": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "hash": {
+            "type": "string"
+          },
+          "originURL": {
+            "type": "string"
+          },
+          "shortURL": {
+            "type": "string"
+          },
+          "clicks": {
+            "type": "number"
+          },
+          "createAt": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
