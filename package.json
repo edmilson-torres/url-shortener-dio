@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "URL Shortener for DIO Project",
   "main": "index.js",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "eslint": "eslint src/**/*.ts",
     "eslint:fix": "eslint --fix src/**/*.ts",
