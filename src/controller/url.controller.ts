@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { nanoid } from 'nanoid';
-import config from '../config/constants';
+import { config } from '../config/Constants';
 import URLModel from '../database/models/url.model';
 
 class URLController {
