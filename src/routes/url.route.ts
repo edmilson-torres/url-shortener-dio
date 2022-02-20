@@ -10,5 +10,6 @@ const urlController = new URLController();
 router.get('/:hash/stats', rateLimiterStats, urlController.stats);
 router.get('/:hash', rateLimiterRedirect, urlController.redirect);
 router.post('/shorten', rateLimiterShorten, isValidURLMiddleware, urlController.shorten);
+router.get('/', urlController.welcome);
 
 export default router;
