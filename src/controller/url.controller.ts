@@ -46,7 +46,7 @@ class URLController {
       if (url) {
         url.clicks += 1;
         await URLModel.updateOne({ hash: url.hash }, { clicks: url.clicks });
-        res.status(200).redirect(url.originURL);
+        res.status(301).redirect(url.originURL);
         return;
       }
 
