@@ -1,19 +1,46 @@
-# url-shortener-dio
+# Projeto Construindo Encurtador de URL
 
-Projeto criado junto da DIO para construção de um Encurtador de URL.
+## 📄 Sobre
+Projeto criado junto da DIO para construção de um Encurtador de URL. Eduzz Fullstack Developer #3. Especialista [Alexia Pereira](https://www.linkedin.com/in/alexiapereira/).
 
-## Rodando o projeto
+## 📋 Funcionalidades
 
-- `npm install`
-- `npm run build`
-- `npm run dev`
+### Padrão
+- Endpoint `/shorten` para encurtar a URL
+- Endpoint `/{hash}` para redirecionar para a página origem
+### Recursos adicionados
+- Remoção do pacote `shortid` que está **deprecated** e adicionado o `nanoid`
+- **Update dos pacotes** e refatoração para adequação, removendo avisos de vunerabilidade
+- Endpoint `/{hash}/stats` para visualizar as informações
+- **Contador de visitas** quando usada a rota de redirecionamento
+- **Validação da URL** enviada utilizando RegEx
+- **Melhoria na segurança** adicionando o package Helmet, Rate Limit e Dotenv
+- **Testes** de rota e da validação de URL
+- **Documentação** Open API
+- Mudanças do HTTP status code para melhor adequação REST API
+`201 Created`, `301 Redirect  `, `429 Rate limit `
 
-Algumas informações sobre os vídeos:
 
-- Editor de Texto usado: VSCode
-  - Color Theme do editor: Material UI e Bluloco Dark
-- Programa para verificar as requests: Insomnia
+## 🔗 Live
+https://url-dio.herokuapp.com/api-docs/  
+** Host heroku grátis, pode demorar um pouco para responder
+## 💻 Tecnologias utilizadas
+  - NojeJS
+  - NPM
+  - ExpressJS
+  - TypeScript
+  - Jest
+  - Swagger
+  - ESLint
+  - Prettier
 
-Informações pessoais:
+## ⚙️ Rodando o projeto
 
-- Meu linkedin: https://www.linkedin.com/in/alexiapereira/
+##### Instale as dependências necessárias para a execução
+`npm install`
+
+#####  Executar
+`npm run dev`
+
+#####  Testar
+`npm run test`
