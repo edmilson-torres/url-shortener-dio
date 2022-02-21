@@ -14,8 +14,12 @@
   },
   "servers": [
     {
+      "url": "https://url-dio.herokuapp.com",
+      "description": "API host test"
+    },
+    {
       "url": "http://localhost:5000",
-      "description": "API test"
+      "description": "API local test"
     }
   ],
   "host": "localhost:5000",
