@@ -22,13 +22,14 @@ Projeto criado junto da DIO para construção de um Encurtador de URL. Eduzz Ful
 
 
 ## 🔗 Live
-https://url-dio.herokuapp.com/api-docs/  
+https://url-dio.herokuapp.com/api-docs/
 ** Host heroku grátis, pode demorar um pouco para responder
 ## 💻 Tecnologias utilizadas
   - NojeJS
   - NPM
   - ExpressJS
   - TypeScript
+  - MongoDB
   - Jest
   - Swagger
   - ESLint
