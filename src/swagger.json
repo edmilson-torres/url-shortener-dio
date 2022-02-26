@@ -110,7 +110,7 @@
           "404": {
             "description": "URL not found"
           },
-          "301": {
+          "302": {
             "description": "Redirected to origin URL"
           }
         }

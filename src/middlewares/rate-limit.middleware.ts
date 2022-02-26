@@ -3,7 +3,7 @@ import rateLimit from 'express-rate-limit';
 
 export const rateLimiterShorten = rateLimit({
   windowMs: 1 * 60 * 1000,
-  max: 5,
+  max: 10,
   keyGenerator(req: Request): string {
     return req.ip;
   },
@@ -29,7 +29,7 @@ export const rateLimiterStats = rateLimit({
 
 export const rateLimiterRedirect = rateLimit({
   windowMs: 1 * 60 * 1000,
-  max: 30,
+  max: 60,
   keyGenerator(req: Request): string {
     return req.ip;
   },

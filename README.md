@@ -18,10 +18,10 @@ Projeto criado junto da DIO para construção de um Encurtador de URL. Eduzz Ful
 - **Testes** de rota e da validação de URL
 - **Documentação** Open API
 - Mudanças do HTTP status code para melhor adequação REST API
-`201 Created`, `301 Redirect  `, `429 Rate limit `
+`201 Created`, `302 Redirect  `, `429 Rate limit `
 
 
-## 🔗 Live
+## 🔗 Preview
 https://url-dio.herokuapp.com/api-docs/
 ** Host heroku grátis, pode demorar um pouco para responder
 ## 💻 Tecnologias utilizadas
@@ -45,3 +45,6 @@ https://url-dio.herokuapp.com/api-docs/
 
 #####  Testar
 `npm run test`
+
+#####  Build
+`npm run build`

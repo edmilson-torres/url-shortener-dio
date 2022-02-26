@@ -1,9 +1,9 @@
 import isValidURL from './is-valid-url.utils';
 
-describe('isvalid url', () => {
-  const isValid = isValidURL('http://www.google.com');
+const isValid = isValidURL('http://www.google.com');
 
-  it('utils: isValidURL', () => {
+describe('isvalid url', () => {
+  test('should be able validate a URL', () => {
     expect(isValid).toBeTruthy();
   });
 });
