@@ -10,7 +10,7 @@ Projeto criado junto da DIO para construção de um Encurtador de URL. Eduzz Ful
 - Endpoint `/{hash}` para redirecionar para a página origem
 ### Recursos adicionados
 - Remoção do pacote `shortid` que está **deprecated** e adicionado o `nanoid`
-- **Update dos pacotes** e refatoração para adequação, removendo avisos de vunerabilidade
+- **Update dos pacotes** e refatoração para adequação, removendo avisos de vulnerabilidade
 - Endpoint `/{hash}/stats` para visualizar as informações
 - **Contador de visitas** quando usada a rota de redirecionamento
 - **Validação da URL** enviada utilizando RegEx
