@@ -12,7 +12,16 @@ const api = express();
 
 api.use(express.json());
 api.use(helmet());
-api.use(cors({ origin: '*' }));
+
+api.use(
+  cors({
+    origin: '*',
+    credentials: true,
+    preflightContinue: true,
+    allowedHeaders: ['X-Requested-With'],
+    exposedHeaders: ['Content-Length', 'ETag', 'Link', 'X-RateLimit-Limit', 'X-RateLimit-Remaining'],
+  }),
+);
 
 api.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
