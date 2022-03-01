@@ -123,6 +123,14 @@
         "tags": [
           "URL"
         ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "hash",
+            "description": "URL hash",
+            "required": true
+          }
+        ],
         "responses": {
           "409": {
             "description": "Too many requests"
