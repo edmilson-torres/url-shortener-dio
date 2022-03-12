@@ -15,7 +15,7 @@ Projeto criado junto da DIO para construção de um Encurtador de URL. Eduzz Ful
 - **Contador de visitas** quando usada a rota de redirecionamento
 - **Validação da URL** enviada utilizando RegEx
 - **Melhoria na segurança** adicionando o package Helmet, Rate Limit e Dotenv
-- **Testes** de rota e da validação de URL
+- **Testes** de rota (integração) e da validação de URL
 - **Documentação** Open API
 - Mudanças do HTTP status code para melhor adequação REST API
 `201 Created`, `302 Redirect  `, `429 Rate limit `
